@@ -11,7 +11,6 @@ from sklearn.cluster import AgglomerativeClustering
 # Extracting the data from the csv file
 from sklearn.utils import graph
 
-# Reading CSV file
 
 data = pd.read_csv("input.csv", delimiter=';', header=None, decimal=",")
 number_cluster = data.loc[0,0]
@@ -53,11 +52,19 @@ plt.legend(loc=1, shadow=bool)
 
 # Clustering xy data points from scatterplot
 
-clustering = AgglomerativeClustering(n_clusters = int(number_cluster), affinity = 'euclidean', linkage ='ward')
+plt.figure()
+clustering = AgglomerativeClustering(n_clusters = int(number_cluster),
+                                     affinity = 'euclidean', linkage ='ward')
 clustering.fit_predict(X)
 number = clustering.labels_
 number = number+1
 print(number)
+plt.scatter(X[:, 0], X[:, 1], c= clustering.labels_, s=80, cmap='rainbow', marker='x',
+            label='Data points', linewidths=3)
+plt.xlabel('x-axis')
+plt.ylabel('y-axis')
+plt.title('Points Clustered')
+
 
 # Dendrogram of clustered data points
 
