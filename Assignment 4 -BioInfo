@@ -7,6 +7,7 @@ import numpy as np
 import scipy.cluster.hierarchy as sch
 from matplotlib.pyplot import legend
 from sklearn.cluster import AgglomerativeClustering
+import plotly.express as px
 
 # Extracting the data from the csv file
 from sklearn.utils import graph
