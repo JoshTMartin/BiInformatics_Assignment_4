@@ -48,7 +48,6 @@ for label, x, y in zip(labels, X[:, 0], X[:, 1]):
 # legend display
 
 plt.legend(loc=1, shadow=bool)
-plt.show()
 
 # Aggiomerative hierarchical algorithm & dendrogram
 
